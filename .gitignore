@@ -1,0 +1,11 @@
+/herdr-agent-history
+*.test
+coverage.out
+
+# Runtime state and credentials do not belong in the public repository.
+/control.sock
+/history.json
+/tracker.lock
+.env
+.env.*
+!.env.example

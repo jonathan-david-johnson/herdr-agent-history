@@ -1,0 +1,33 @@
+id = "local.agent-history"
+name = "Agent History"
+version = "0.1.0"
+min_herdr_version = "0.9.1"
+description = "Visited-agent history with unseen-completion handoff at the forward boundary"
+platforms = ["linux"]
+
+[[build]]
+command = ["go", "build", "-trimpath", "-o", "herdr-agent-history", "./cmd/herdr-agent-history"]
+
+[[actions]]
+id = "previous"
+title = "Previous visited agent"
+contexts = ["pane", "workspace"]
+command = ["./herdr-agent-history", "previous"]
+
+[[actions]]
+id = "next"
+title = "Next visited agent or unseen completion"
+contexts = ["pane", "workspace"]
+command = ["./herdr-agent-history", "next"]
+
+[[actions]]
+id = "inspect"
+title = "Inspect agent history (output in plugin logs)"
+contexts = ["pane", "workspace"]
+command = ["./herdr-agent-history", "inspect"]
+
+[[actions]]
+id = "reset"
+title = "Reset visited-agent history"
+contexts = ["pane", "workspace"]
+command = ["./herdr-agent-history", "reset"]
